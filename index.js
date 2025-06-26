@@ -6,6 +6,8 @@ const VERIFICATION_TOKEN = 'pokejagt_verification_token_2025_secure_example_xyz'
 app.use(express.json());
 
 app.post('/ebay/account-deletion', (req, res) => {
+  console.log('✅ eBay called the endpoint');
+  console.log('🔎 Body:', req.body);
   res.status(200).type('text/plain').send(VERIFICATION_TOKEN);
 });
 
