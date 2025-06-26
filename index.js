@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const VERIFICATION_TOKEN = 'pokejagt_verification_token_2025_secure_example_xyz
-'; // der Token, den du bei eBay eingibst
+const VERIFICATION_TOKEN = 'pokejagt_verification_token_2025_secure_example_xyz';
+
 
 app.post('/ebay/account-deletion', (req, res) => {
   console.log('Received eBay deletion notification:', req.body);
