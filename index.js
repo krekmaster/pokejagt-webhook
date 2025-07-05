@@ -39,7 +39,8 @@ app.get('/ebay/account-deletion', (req, res) => {
     console.log('🔐 eBay Challenge Code received:', challengeCode);
     
     // Hash berechnen: challengeCode + verificationToken + endpoint
-    const endpoint = `${req.protocol}://${req.get('host')}${req.originalUrl.split('?')[0]}`;
+    // Immer https verwenden, wie von eBay gefordert
+    const endpoint = `https://${req.get('host')}${req.originalUrl.split('?')[0]}`;
     const hash = crypto.createHash('sha256');
     hash.update(challengeCode);
     hash.update(VERIFICATION_TOKEN);
